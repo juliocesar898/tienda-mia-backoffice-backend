@@ -27,44 +27,6 @@ $ npm run dev
 
 🚀🚀 Actually you can see the api health at http://24.199.109.40/api/health
 
-## Create new user ✔
-```
-curl POST --location 'http://24.199.109.40/api/auth/signup' \
---header 'Content-Type: application/json' \
---data '{
-    "username": "new user",
-    "email": "user1234@testing.com",
-    "password": "password1234",
-    "phone": "+12345678"
-}'
-```
-
-
-## Login User 🔐
-```
-curl POST --location 'http://24.199.109.40/api/auth/signin' \
---header 'Content-Type: application/json' \
---data '{
-    "email": "user1234@testing.com",
-    "password": "password1234"
-}'
-```
-
-## Change Password 🔑
-```
-curl POST --location 'http://24.199.109.40/api/auth/change-password' \
---header 'Content-Type: application/json' \
---header 'Authorization: Bearer token' \
---data '{
-    "newPassword": "mypass123456"
-}'
-```
-
-## GEt Profile USer 🔍
-```
-curl --location 'http://24.199.109.40/api/auth/profile' \
---header 'Authorization: Bearer token'
-```
 
 ## Deployment 📦
 
