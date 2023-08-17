@@ -25,12 +25,4 @@ const createNewProduct = ({
   }
 };
 
-const getProducts = () => {
-  try {
-    return findAllProducts();
-  } catch (error) {
-    throw error;
-  }
-};
-
-module.exports = { createNewProduct, getProducts };
+module.exports = { createNewProduct };

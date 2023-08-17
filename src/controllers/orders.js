@@ -1,5 +1,6 @@
-const { createNewOrder, getAllOrders } = require('../interactors/orders');
+const { createNewOrder } = require('../interactors/orders');
 const { parseOrders } = require('../serializers/orders');
+const { findAllOrders } = require('../services/orders');
 
 const newOrder = ({ body }, res, next) =>
   createNewOrder(body)
@@ -7,7 +8,7 @@ const newOrder = ({ body }, res, next) =>
     .catch(next);
 
 const getOrders = (_, res, next) =>
-  getAllOrders()
+  findAllOrders()
     .then((orders) => res.status(200).send(parseOrders(orders)))
     .catch(next);
 

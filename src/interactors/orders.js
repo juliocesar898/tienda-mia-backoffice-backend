@@ -19,14 +19,6 @@ const createNewOrder = ({
   }
 };
 
-const getAllOrders = () => {
-  try {
-    return findAllOrders();
-  } catch (error) {
-    throw error;
-  }
-};
-
 function addHours (hours, date = new Date()) {  
   if (typeof hours !== 'number') {
     throw new Error('Invalid "hours" argument')
@@ -41,4 +33,4 @@ function addHours (hours, date = new Date()) {
   return date
 }
 
-module.exports = { createNewOrder, getAllOrders };
+module.exports = { createNewOrder };

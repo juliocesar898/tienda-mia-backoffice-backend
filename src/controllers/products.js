@@ -1,5 +1,6 @@
-const { createNewProduct, getProducts } = require('../interactors/products');
+const { createNewProduct } = require('../interactors/products');
 const { parseProducts } = require('../serializers/products');
+const { findAllProducts } = require('../services/products');
 
 const saveProduct = ({ body }, res, next) =>
   createNewProduct(body)
@@ -7,7 +8,7 @@ const saveProduct = ({ body }, res, next) =>
     .catch(next);
 
 const getAllProducts = (_, res, next) =>
-  getProducts()
+  findAllProducts()
     .then((products) => res.status(200).send(parseProducts(products)))
     .catch(next);
 
